@@ -2,7 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+::selection{
+  color: #fff;
+  background-color: #9603e5;
 }
 
 a {
@@ -19,7 +23,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
+    color: rgba(255, 255, 255, 0.873);
     background: black;
   }
 }

@@ -16,10 +16,10 @@ export default function handler(req, res) {
   res.status(200).json({
     name: 'Vinícius Paixão',
     nickname: 'Vini',
-    idade: `${yearsOld()}`,
-    live: `Brasília-BR`,
+    age: `${yearsOld()}`,
+    leave: `Brasília-DF`,
     from: `Brasília-BR`,
-    tempoTrabalho: `${new Date().getFullYear() - 2004}`,
+    workingTime: `${new Date().getFullYear() - 2004}`,
     degrees: [{
       first: 'Design Gráfico',
       secound: 'Ciência da Computação',
