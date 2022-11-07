@@ -95,28 +95,23 @@ export default function handler(req, res) {
     ],
     expertise: [
       {
-        "numb": "01",
         "title": "Front-End",
-        "description": "A arte de juntar ótima experiência do usuário, boa navegação e tecnicas modernas de desenvolvimento para uma entrega eficiente e de alta performance.s"
+        "description": "A arte de juntar ótima experiência do usuário, boa navegação e tecnicas modernas de desenvolvimento para uma entrega eficiente e de alta performance."
       },
       {
-        "numb": "02",
-        "title": "CMS WordPress",
-        "description": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
-      },
-      {
-        "numb": "03",
-        "title": "Continuous Delivery",
+        "title": "DevOps",
         "description": "Todos os estágios do pipeline de produção até o lançamento do produto para o cliente."
       },
       {
-        "numb": "04",
+        "title": "WordPress",
+        "description": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
+      },
+      {
         "title": "Métricas Web",
         "description": "Certificado pelo Google em 2015, possuo um nível avançado em métricas web. Ferramentas: Google Analytics e Data Studio; ChartBeat;"
       },
       {
-        "numb": "05",
-        "title": "Design Gráfico",
+        "title": "Design Gráfico / UX",
         "description": "Tendo Design Gráfico como a primeira formação, trabalho com ferramentas Adobe CC com foco na web."
       }
     ],

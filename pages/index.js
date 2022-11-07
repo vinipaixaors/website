@@ -6,12 +6,17 @@ import { GitHub, Linkedin, Twitter, Instagram, MapPin, Phone, Globe, Mail } from
 import Flag from 'react-flagkit'
 import { useState, useEffect } from 'react'
 
+import HeaderSection from '../components/Header/HeaderSection'
+import Expertise from '../components/Home/Expertise/Expertise'
+import Skills from '../components/Home/Skills/Skills'
+
 // const api = 'https://cv.vini.digital/api';
 
 export default function Home() {
 
   const [about, setAbout] = useState();
   const [expertise, setExpertise] = useState();
+  const [skills, setSkills] = useState();
 
   useEffect(() => {
     fetch(`/api/about`)
@@ -19,11 +24,12 @@ export default function Home() {
       .then((response) => {
         setAbout(response);
       });
-    
+
     fetch(`/api/data`)
       .then((response) => response.json())
       .then((response) => {
         setExpertise(response.expertise);
+        setSkills(response.skills);
       });
 
   }, []);
@@ -51,7 +57,9 @@ export default function Home() {
       </Head>
 
       <header className={styles.header}>
-        <div className={styles.col}>
+
+
+        <div className={`${styles.col} ${styles.col1}`}>
           <picture>
             <Image src="/images/avatar.jpeg" alt="Foto Vinícius" width={540} height={593} />
           </picture>
@@ -98,7 +106,7 @@ export default function Home() {
                   <small>Phone</small>
                 </div>
                 <div>
-                  <Link href="tel:+5561993736305">+55 (61) 99373-6305</Link>
+                  <Link href="tel:+5561993736305">(61) 99373-6305</Link>
                 </div>
               </li>
               <li className={styles.email}>
@@ -151,22 +159,30 @@ export default function Home() {
           </main>
         </section>
 
-        <section>
-          <header className={styles.col}>
-            <h3>Experiência</h3>
-            <small>Ainda faltam muitas linhas de código</small>
-          </header>
-          <main className={styles.col}>
-            <div className={styles.media}>
-              {expertise?.map((item, index) => (
-                <div key={index} className={styles.item}>
-                  <span>{item.numb}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </main>
+        <section id="expertise">
+          <HeaderSection 
+            title="Experiência"
+            desc="Ainda faltam muitas linhas de código"
+            classTemplate={`${styles.col}`}
+          />
+
+          <Expertise 
+            classTemplate={`${styles.col}`}
+            data={expertise}
+          />
+        </section>
+
+        <section id="skills">
+          <HeaderSection 
+            title="Habilidades"
+            desc="Linguagens, ferramentas e soluções"
+            classTemplate={`${styles.col}`}
+          />
+
+          <Skills 
+            classTemplate={`${styles.col}`}
+            data={skills}
+          />
         </section>
 
       </main>

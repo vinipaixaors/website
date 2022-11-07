@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
           html {
             font-family: ${firacode.style.fontFamily}
           }
-          h1{
+          h1, h2, h3, h4, h5, h6{
             font-family: ${oswald.style.fontFamily}
           }
         `}</style>
