@@ -7,11 +7,12 @@
   padding-left: 25px;
   position: relative;
   margin: 64px;
-  padding: 0 0 0 40px!important;
+  padding: 0 0 0 40px;
   height: auto !important;
 
   @media(max-width: $screen-sm){
     margin: 32px;
+    padding: 0 0 0 32px;
   }
 
   & > div{

@@ -10,6 +10,7 @@ import HeaderSection from '../components/Header/HeaderSection'
 import Expertise from '../components/Home/Expertise/Expertise'
 import Skills from '../components/Home/Skills/Skills'
 import Experience from '../components/Home/Experience/Experience'
+import Awards from '../components/Home/Awards/Awards'
 
 export default function Home() {
 
@@ -17,6 +18,7 @@ export default function Home() {
   const [expertise, setExpertise] = useState();
   const [skills, setSkills] = useState();
   const [experience, setExperience] = useState();
+  const [awards, setAwards] = useState();
 
   useEffect(() => {
     fetch(`/api/about`)
@@ -31,6 +33,7 @@ export default function Home() {
         setExpertise(response.expertise);
         setSkills(response.skills);
         setExperience(response.experience);
+        setAwards(response.awards);
       });
 
   }, []);
@@ -193,6 +196,19 @@ export default function Home() {
           <Experience 
             classTemplate={`${styles.col}`}
             data={experience}
+          />
+        </section>
+        
+        <section id="awards">
+          <HeaderSection 
+            title="Prêmios"
+            desc="Conquistas inesquecíveis"
+            classTemplate={`${styles.col}`}
+          />
+
+          <Awards 
+            classTemplate={`${styles.col}`}
+            data={awards}
           />
         </section>
 
