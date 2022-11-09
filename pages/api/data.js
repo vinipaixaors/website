@@ -2,6 +2,56 @@ export default function handler(req, res) {
   res.status(200).json({
     experience: [
       {
+        "type": "project",
+        "dateStart": "2022",
+        "dateEnd": "Nov",
+        "institution": "Escolha a Escola",
+        "role": "Guia de escolas",
+        "locate": "Brasília, DF",
+        "description": "Guia de escolas do DF utilizando Next.JS, Laravel e AWS",
+        "link": "https://escolhaaescola.correiobraziliense.com.br"
+      },
+      {
+        "type": "project",
+        "dateStart": "2022",
+        "dateEnd": "Out",
+        "institution": "Eleições 2022",
+        "role": "Cobertura das eleições",
+        "locate": "Brasília, DF",
+        "description": "Guia de EleiçÕes do DF utilizando Next.JS, Laravel e AWS",
+        "link": "https://escolhaaescola.correiobraziliense.com.br"
+      },
+      {
+        "type": "job",
+        "dateStart": "2020",
+        "dateEnd": "Dez",
+        "institution": "Vini Digital",
+        "role": "CEO",
+        "locate": "Brasília, DF",
+        "description": "",
+        "link": ""
+      },
+      {
+        "type": "project",
+        "dateStart": "2020",
+        "dateEnd": "Set",
+        "institution": "Migração CMS & Infraestrutura",
+        "role": "Correio Braziliense",
+        "locate": "Brasília, DF",
+        "description": "...",
+        "link": "https://www.correiobraziliense.com.br"
+      },
+      {
+        "type": "job",
+        "dateStart": "2019",
+        "dateEnd": "",
+        "institution": "Diários Associados",
+        "role": "Gestor de Tecnologia",
+        "locate": "Brasília, DF",
+        "description": "",
+        "link": ""
+      },
+      {
         "type": "certified",
         "dateStart": "2019",
         "dateEnd": "2022",
@@ -23,11 +73,11 @@ export default function handler(req, res) {
       {
         "type": "job",
         "dateStart": "2018",
-        "dateEnd": "atual",
+        "dateEnd": "2019",
         "institution": "Metrópoles",
         "role": "Coordenador de Tecnologia",
         "locate": "Brasília, DF",
-        "description": "Atual emprego e fonte de novos desafios pessoais e profissionais. Atuo como Coordenador de tecnologia e tenho a missão de por em práticas conhecimento de Engenharia absorvidos ao longos anos. Uma empresa muito promissora no DF e no pais. Está entre as 13 empresa nacionais que mais cresceu nos últimos anos."
+        "description": "Fonte de novos desafios pessoais e profissionais. Atuei como Coordenador de tecnologia e tive a missão de por em práticas conhecimento de Engenharia absorvidos ao longos anos."
       },
       {
         "type": "job",
@@ -36,17 +86,17 @@ export default function handler(req, res) {
         "institution": "Diários Associados",
         "role": "Analista Web",
         "locate": "Brasília, DF",
-        "description": "O Bom filho a casa retorna. Convidado a voltar a empresa que muito me fez crescer profissionalmente, pude mais uma vez participar da entrega da nova versão do website do Correio Braziliense. Site esse que obteve muitas tecnologias atuais e um desenvolvimento muito forte com foco no resultado da navegação."
+        "description": "Convidado a retornar a empresa que muito me fez crescer profissionalmente, pude mais uma vez participar da entrega da nova versão do website do Correio Braziliense. Site esse que obteve muitas tecnologias atuais e um desenvolvimento muito forte com foco no resultado da navegação."
       },
-      {
-        "type": "study",
-        "dateStart": "2016",
-        "dateEnd": "Cursando",
-        "institution": "Engenharia de software",
-        "role": "Unicesumar",
-        "locate": "Brasília, DF",
-        "description": "O Curso de Bacharelado em Engenharia de Software tem como objetivo formar profissionais aptos a propor melhorias e inovações no planejamento, construção, gestão e manutenção de processos, serviços e produtos computacionais, baseados nas técnicas da Engenharia de Software: sistemas de software corretos, completos, seguros, amigáveis, usáveis, com qualidade, fáceis de manter e custo justo"
-      },
+      // {
+      //   "type": "study",
+      //   "dateStart": "2016",
+      //   "dateEnd": "Cursando",
+      //   "institution": "Engenharia de software",
+      //   "role": "Unicesumar",
+      //   "locate": "Brasília, DF",
+      //   "description": "O Curso de Bacharelado em Engenharia de Software tem como objetivo formar profissionais aptos a propor melhorias e inovações no planejamento, construção, gestão e manutenção de processos, serviços e produtos computacionais, baseados nas técnicas da Engenharia de Software: sistemas de software corretos, completos, seguros, amigáveis, usáveis, com qualidade, fáceis de manter e custo justo"
+      // },
       {
         "type": "certified",
         "dateStart": "2015",
@@ -149,30 +199,25 @@ export default function handler(req, res) {
         "prop": {
           "1": "Stylus",
           "2": "PostCSS",
-          "3": "Sass",
-          "4": "bootstrap",
-          "5": "Bulma"
+          "3": "Sass"
         }
       },
       {
         "title": "Javascript",
-        "size": "75"
+        "size": "75",
+        "prop": {
+          "1": "React Js",
+          "2": "Next Js",
+          "3": "Node JS",
+        }
       },
       {
-        "title": "React",
-        "size": "65"
-      },
-      {
-        "title": "NodeJS",
-        "size": "55"
-      },
-      {
-        "title": "Gulp",
+        "title": "Webpack",
         "size": "80"
       },
       {
         "title": "Git",
-        "size": "70"
+        "size": "80"
       },
       {
         "title": "PHP",
@@ -187,8 +232,12 @@ export default function handler(req, res) {
         "size": "80"
       },
       {
-        "title": "AWS",
-        "size": "60"
+        "title": "Cloud",
+        "size": "60",
+        "prop": {
+          "1": "AWS",
+          "2": "GCP"
+        }
       },
       {
         "title": "Google Analytics",
@@ -199,20 +248,17 @@ export default function handler(req, res) {
         "size": "90"
       },
       {
-        "title": "Adobe XD",
+        "title": "Figma",
         "size": "60"
       },
       {
-        "title": "Adobe Illustrator",
-        "size": "75"
-      },
-      {
-        "title": "Adobe Photoshop",
-        "size": "80"
-      },
-      {
-        "title": "Zeplin",
-        "size": "70"
+        "title": "Adobe",
+        "size": "75",
+        "prop": {
+          "1": "Photoshop",
+          "2": "Illustrator",
+          "3": "XD"
+        }
       }
     ],
     clients: [

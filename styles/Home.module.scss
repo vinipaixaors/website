@@ -15,7 +15,7 @@
   }
 
   .col {
-    background-color: $gray-200;
+    background-color: $gray-100;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     // position: relative;
 
     @media(max-width: $screen-sm){
-      padding: 20px;
+      padding: 32px;
     }
 
     &.col1{
@@ -35,9 +35,9 @@
       &:after{
         @media(max-width: $screen-sm){
           content: '';
-          background-color: $gray-200;
+          background-color: $gray-100;
           width: 100%;
-          height: 80px;
+          height: 50%;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -75,7 +75,7 @@
     }
 
     &:nth-child(odd) {
-      background-color: $gray-100;
+      background-color: $gray-200;
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
@@ -287,13 +287,28 @@
               flex-direction: row;
               align-items: center;
               justify-content: flex-start;
-              gap: 4px;
+              gap: 8px;
               height: auto;
               margin: 8px 0;
               padding: 0;
 
               @media(max-width: $screen-sm){
                 align-items: flex-start;
+              }
+
+              &:nth-child(2){
+                font-size: .8rem;
+                margin: 12px 0;
+                letter-spacing: -.02rem;
+              }
+
+              h5{
+                margin: 0;
+                padding: 0;
+                font-size: .8rem;
+                line-height: 1;
+                letter-spacing: .07rem;
+                text-transform: uppercase;
               }
 
               a{
@@ -329,7 +344,7 @@
       padding: 64px;
 
       @media(max-width: $screen-sm){
-        padding: 20px;
+        padding: 32px;
       }
 
       &:nth-child(odd){
@@ -401,10 +416,10 @@
 
     &:nth-child(even){
       .col {
-        background-color: $gray-200;
+        background-color: $gray-100;
     
         &:nth-child(odd) {
-          background-color: $gray-100;
+          background-color: $gray-200;
         }
       }
     }

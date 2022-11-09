@@ -9,14 +9,14 @@ import { useState, useEffect } from 'react'
 import HeaderSection from '../components/Header/HeaderSection'
 import Expertise from '../components/Home/Expertise/Expertise'
 import Skills from '../components/Home/Skills/Skills'
-
-// const api = 'https://cv.vini.digital/api';
+import Experience from '../components/Home/Experience/Experience'
 
 export default function Home() {
 
   const [about, setAbout] = useState();
   const [expertise, setExpertise] = useState();
   const [skills, setSkills] = useState();
+  const [experience, setExperience] = useState();
 
   useEffect(() => {
     fetch(`/api/about`)
@@ -30,6 +30,7 @@ export default function Home() {
       .then((response) => {
         setExpertise(response.expertise);
         setSkills(response.skills);
+        setExperience(response.experience);
       });
 
   }, []);
@@ -96,14 +97,14 @@ export default function Home() {
               <li className={styles.local}>
                 <div>
                   <MapPin size={16} />
-                  <small>Local</small>
+                  <h5>Local</h5>
                 </div>
                 <div>Brasília, DF</div>
               </li>
               <li className={styles.whatsapp}>
                 <div>
                   <Phone size={16} />
-                  <small>Phone</small>
+                  <h5>Phone</h5>
                 </div>
                 <div>
                   <Link href="tel:+5561993736305">(61) 99373-6305</Link>
@@ -112,7 +113,7 @@ export default function Home() {
               <li className={styles.email}>
                 <div>
                   <Globe size={16} />
-                  <small>Web</small>
+                  <h5>Web</h5>
                 </div>
                 <div>
                   <Link href="https://vini.digital">vini.digital</Link>
@@ -121,7 +122,7 @@ export default function Home() {
               <li className={styles.email}>
                 <div>
                   <Mail size={16} />
-                  <small>E-mail</small>
+                  <h5>E-mail</h5>
                 </div>
                 <div>
                   <Link href="mailto:oi@vini.digital">oi@vini.digital</Link>
@@ -142,9 +143,6 @@ export default function Home() {
             <small>Um pouco sobre meu <strong>perfil</strong></small>
           </header>
           <main className={styles.col}>
-            <p className={styles.firstParagraph}>
-              Bem vindo!
-            </p>
             <p>
               Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Vini Digital como consultor
               e desenvolvedor de software.
@@ -182,6 +180,19 @@ export default function Home() {
           <Skills 
             classTemplate={`${styles.col}`}
             data={skills}
+          />
+        </section>
+        
+        <section id="expirience">
+          <HeaderSection 
+            title="Experiência e Formação"
+            desc="Lugares por onde passei, atuei e aprendi."
+            classTemplate={`${styles.col}`}
+          />
+
+          <Experience 
+            classTemplate={`${styles.col}`}
+            data={experience}
           />
         </section>
 

@@ -2,11 +2,12 @@ html,
 body {
   padding: 0;
   margin: 0;
+  min-height: -webkit-fill-available;
 }
 
 ::selection{
   color: #fff;
-  background-color: #9603e5;
+  background-color: #a97dff;
 }
 
 a {
@@ -26,4 +27,29 @@ a {
     color: rgba(255, 255, 255, 0.873);
     background: #2b2c2c;
   }
+}
+
+
+.certified:first-child{
+  background-color: #ff9ff3 !important;
+}
+
+.certified > div > h5{
+  color: #ff9ff3 !important;
+}
+
+.study:first-child{
+  background-color: #1dd1a1 !important;
+}
+
+.study > div > h5{
+  color: #1dd1a1 !important;
+}
+
+.project:first-child{
+  background-color: #feca57 !important;
+}
+
+.project > div > h5{
+  color: #feca57 !important;
 }
