@@ -47,10 +47,10 @@ export default function Home() {
         <meta name="keywords" content="desenvolvedor web, frontend, currículo, brasília, df" />
         <meta name="author" content="Vinícius Paixão" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        {/* <meta httpEquiv="Content-Security-Policy" content={`script-src 'none'`}></meta> */}
+        {/* <meta httpEquiv="Content-Security-Policy" content={`script-src 'upgrade-insecure-requests'`} /> */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://cv.vini.digital"/>
-
+        
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://cv.vini.digital" />
         <meta property="og:title" content="Vinícius Paixão - Desenvolvedor web, Frontend" />
@@ -61,6 +61,8 @@ export default function Home() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
+        
+        <meta name="theme-color" content="#A57DFF"/>
       </Head>
 
       <nav className={styles.navigation}>
@@ -74,7 +76,15 @@ export default function Home() {
       <header className={styles.header}>
         <div className={`${styles.col} ${styles.col1}`}>
           <picture>
-            <Image src="/images/avatar.jpeg" alt="Foto Vinícius" width={540} height={593} />
+            <Image 
+              src="/images/avatar.jpeg" 
+              alt="Foto Vinícius" 
+              // width={540} 
+              // height={593}
+              fill
+              sizes="(max-width: 768px) 540px,
+              (max-width: 1200px) 270px, 200px"
+            />
           </picture>
         </div>
 
