@@ -6,13 +6,13 @@
   border-color: #3a3a3b;
   padding-left: 25px;
   position: relative;
-  margin: 64px;
+  margin: 64px 0 64px 64px;
   padding: 0 0 0 40px;
   height: auto !important;
 
   @media(max-width: $screen-sm){
     margin: 32px;
-    padding: 0 0 0 32px;
+    padding: 32px 0 32px 32px !important;
   }
 
   & > div{
@@ -41,6 +41,10 @@
     grid-template-columns: 250px 1fr;
     gap: 64px;
   
+    @media(max-width: $screen-lg){
+      gap: 12px;
+    }
+
     @media(max-width: $screen-sm){
       margin: 0 0 1.5rem 0;
       padding: 0;
@@ -72,7 +76,8 @@
     }
   }
 
-  h5{
+  h5,
+  strong{
     margin: 0;
     padding: 0 0 .8rem;
     color: $purpe-100;

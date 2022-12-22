@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.colStyky{
+  position: sticky;
+  top: 64px;
+  text-align: right;
+
+  @media(max-width: $screen-sm){
+    text-align: left;
+  }
+}

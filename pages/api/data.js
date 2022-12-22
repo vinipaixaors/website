@@ -2,6 +2,16 @@ export default function handler(req, res) {
   res.status(200).json({
     experience: [
       {
+        "type": "study",
+        "dateStart": "2023, Ago",
+        "dateEnd": "2023, Jul",
+        "institution": "Casa Thomas Jefferson",
+        "role": "4Life - B",
+        "locate": "Brasília, DF",
+        "description": "...",
+        "link": "https://thomas.org.br/"
+      },
+      {
         "type": "project",
         "dateStart": "2022",
         "dateEnd": "Nov",
@@ -18,8 +28,18 @@ export default function handler(req, res) {
         "institution": "Eleições 2022",
         "role": "Cobertura das eleições",
         "locate": "Brasília, DF",
-        "description": "Guia de EleiçÕes do DF utilizando Next.JS, Laravel e AWS",
-        "link": "https://escolhaaescola.correiobraziliense.com.br"
+        "description": "Guia de Eleições do DF utilizando Next.JS e AWS",
+        "link": "https://eleicoes.correiobraziliense.com.br"
+      },
+      {
+        "type": "study",
+        "dateStart": "2022, Ago",
+        "dateEnd": "2022, Dez",
+        "institution": "Casa Thomas Jefferson",
+        "role": "4Life - A",
+        "locate": "Brasília, DF",
+        "description": "...",
+        "link": "https://thomas.org.br/"
       },
       {
         "type": "job",
@@ -149,20 +169,20 @@ export default function handler(req, res) {
         "description": "A arte de juntar ótima experiência do usuário, boa navegação e tecnicas modernas de desenvolvimento para uma entrega eficiente e de alta performance."
       },
       {
+        "title": "Backend",
+        "description": "Experiência com o CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
+      },
+      {
         "title": "DevOps",
-        "description": "Todos os estágios do pipeline de produção até o lançamento do produto para o cliente."
-      },
-      {
-        "title": "WordPress",
-        "description": "Vivencia no CMS mais presente na web. Usado da forma correta e com os recursos certos, o WP pode ser o CMS da sua empresa."
-      },
-      {
-        "title": "Métricas Web",
-        "description": "Certificado pelo Google em 2015, possuo um nível avançado em métricas web. Ferramentas: Google Analytics e Data Studio; ChartBeat;"
+        "description": "Todos os estágios do pipeline de produção até o lançamento do produto do cliente."
       },
       {
         "title": "Design Gráfico / UX",
         "description": "Tendo Design Gráfico como a primeira formação, trabalho com ferramentas Adobe CC com foco na web."
+      },
+      {
+        "title": "Métricas Web",
+        "description": "Certificado pelo Google em 2015, possuo um nível avançado em métricas web. Ferramentas: Google Analytics e Data Studio; ChartBeat;"
       }
     ],
     awards: [

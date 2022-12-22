@@ -37,7 +37,6 @@ a {
   }
 }
 
-
 .certified:first-child{
   background-color: #ff9ff3 !important;
 }
@@ -60,4 +59,19 @@ a {
 
 .project > div > h5{
   color: #feca57 !important;
+}
+
+.visible-m{
+  visibility: hidden;
+}
+
+@media(max-width: 814px){
+  .visible-m{
+    visibility: visible;
+  }
+
+  .visible-d{
+    visibility: hidden;
+    display: none !important;
+  }
 }

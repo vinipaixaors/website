@@ -3,22 +3,21 @@
 .awards{
   display: grid !important;
   grid-template-columns: 30% 30% 30%;
-  grid-gap: 3.333%;
+  gap: 3.333%;
 
   // @media(max-width: $screen-md){
   //   grid-template-columns: 30% 30% 30%;
   //   grid-gap: 3.333%;
   // }
   
-  @media(max-width: $screen-sm){
+  @media(max-width: $screen-lg){
     grid-template-columns: 45% 45%;
-    grid-gap: 10%;
+    gap: 10%;
   }
   
   @media(max-width: $screen-xs){
     grid-template-columns: 100%;
-    grid-gap: 0;
-    grid-row-gap: 2rem;
+    gap: 2rem;
   }
 
   .item{

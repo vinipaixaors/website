@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
-import { GitHub, Linkedin, Twitter, Instagram, MapPin, Phone, Globe, Mail } from 'react-feather'
+import { GitHub, Linkedin, Twitter, Instagram, MapPin, Phone, Globe, Mail, User, Menu, Sun, Moon } from 'react-feather'
 import Flag from 'react-flagkit'
 import { useState, useEffect } from 'react'
 
@@ -42,11 +42,14 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Vinícius Paixão - Desenvolvedor web, Frontend</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <meta name="description" content="Currículum Vitae" />
         <meta name="keywords" content="desenvolvedor web, frontend, currículo, brasília, df" />
         <meta name="author" content="Vinícius Paixão" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        {/* <meta httpEquiv="Content-Security-Policy" content={`script-src 'none'`}></meta> */}
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://cv.vini.digital"/>
 
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://cv.vini.digital" />
@@ -60,9 +63,15 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
 
+      <nav className={styles.navigation}>
+        <Menu size={24} />
+        <div className={styles.swithTheme}>
+          <Sun size={24} />
+          <Moon size={24} />
+        </div>
+      </nav>
+
       <header className={styles.header}>
-
-
         <div className={`${styles.col} ${styles.col1}`}>
           <picture>
             <Image src="/images/avatar.jpeg" alt="Foto Vinícius" width={540} height={593} />
@@ -77,7 +86,7 @@ export default function Home() {
                 <Flag country="BR" />
               </div>
               <div>
-                <Flag country="US" />
+                <Flag country="CA" />
               </div>
             </div>
           </div>
@@ -85,12 +94,19 @@ export default function Home() {
           <div className={styles.contentBody}>
             <h1>Vinícius Paixão</h1>
             <h2>Desenvolvedor web<span> frontend &amp; Designer</span></h2>
+            {/* <div className={`${styles.qrCode} visible-d`}>
+              <Image src="/svg/vCard.svg" alt="vcard" width={174} height={174} />
+            </div> */}
             {/* I am a WordPress Developer at heart and create features that are best suited for the job at hand. */}
             <ul className={styles.social}>
               <li><a href="https://github.com/vinipaixaors/" title="Github"><GitHub size={24} /></a></li>
               <li><a href="https://www.linkedin.com/in/viniciuspaixaors/" title="Linkedin"><Linkedin size={24} /></a></li>
               <li><a href="https://twitter.com/viniciuspaixaor" title="Twitter"><Twitter size={24} /></a></li>
               <li><a href="https://www.instagram.com/viniciuspaixaors/" title="Instagram"><Instagram size={24} /></a></li>
+              <li className='visible-d'><a href="/vcf/vcard.vcf" title="Contanto">
+                <Image src="/svg/qrCode.svg" width={24} height={24} alt="QR Code"/></a>
+              </li>
+              <li className='visible-m'><a href="/vcf/vcard.vcf" title="Contanto"><User size={24} /></a></li>
             </ul>
           </div>
 
@@ -100,14 +116,14 @@ export default function Home() {
               <li className={styles.local}>
                 <div>
                   <MapPin size={16} />
-                  <h5>Local</h5>
+                  <h3>Local</h3>
                 </div>
                 <div>Brasília, DF</div>
               </li>
               <li className={styles.whatsapp}>
                 <div>
                   <Phone size={16} />
-                  <h5>Phone</h5>
+                  <h3>Phone</h3>
                 </div>
                 <div>
                   <Link href="tel:+5561993736305">(61) 99373-6305</Link>
@@ -116,7 +132,7 @@ export default function Home() {
               <li className={styles.email}>
                 <div>
                   <Globe size={16} />
-                  <h5>Web</h5>
+                  <h3>Web</h3>
                 </div>
                 <div>
                   <Link href="https://vini.digital">vini.digital</Link>
@@ -125,7 +141,7 @@ export default function Home() {
               <li className={styles.email}>
                 <div>
                   <Mail size={16} />
-                  <h5>E-mail</h5>
+                  <h3>E-mail</h3>
                 </div>
                 <div>
                   <Link href="mailto:oi@vini.digital">oi@vini.digital</Link>
@@ -141,15 +157,17 @@ export default function Home() {
 
       <main className={styles.main}>
         <section>
-          <header className={styles.col}>
-            <h3>Intro</h3>
-            <small>Um pouco sobre meu <strong>perfil</strong></small>
-          </header>
+          <HeaderSection
+            title="Intro"
+            desc="Um pouco sobre meu perfil"
+            classTemplate={`${styles.col}`}
+          />
+         
           <main className={styles.col}>
             <p>
               Me chamo {about?.name}, tenho {about?.age} anos e moro em {about?.leave}. Trabalho pela minha empresa Vini Digital como consultor
               e desenvolvedor de software.
-              Formado em design gráfico e estudante de ciência da Computação, atuo com tecnologia a {about?.workingTime} anos.
+              Formado em design gráfico e estudante de Ciência da Computação, atuo com tecnologia a {about?.workingTime} anos.
               {/* Conquistei <a href="#awards">três prêmios</a> nos últimos anos. */}
             </p>
             {/* <p>Atualmente, foco no desenvolvimento frontend para aplicações web e mobile.</p> */}
@@ -161,52 +179,52 @@ export default function Home() {
         </section>
 
         <section id="expertise">
-          <HeaderSection 
+          <HeaderSection
             title="Experiência"
             desc="Ainda faltam muitas linhas de código"
             classTemplate={`${styles.col}`}
           />
 
-          <Expertise 
+          <Expertise
             classTemplate={`${styles.col}`}
             data={expertise}
           />
         </section>
 
         <section id="skills">
-          <HeaderSection 
+          <HeaderSection
             title="Habilidades"
             desc="Linguagens, ferramentas e soluções"
             classTemplate={`${styles.col}`}
           />
 
-          <Skills 
+          <Skills
             classTemplate={`${styles.col}`}
             data={skills}
           />
         </section>
-        
+
         <section id="expirience">
-          <HeaderSection 
+          <HeaderSection
             title="Experiência e Formação"
             desc="Lugares por onde passei, atuei e aprendi."
             classTemplate={`${styles.col}`}
           />
 
-          <Experience 
+          <Experience
             classTemplate={`${styles.col}`}
             data={experience}
           />
         </section>
-        
+
         <section id="awards">
-          <HeaderSection 
+          <HeaderSection
             title="Prêmios"
             desc="Conquistas inesquecíveis"
             classTemplate={`${styles.col}`}
           />
 
-          <Awards 
+          <Awards
             classTemplate={`${styles.col}`}
             data={awards}
           />
